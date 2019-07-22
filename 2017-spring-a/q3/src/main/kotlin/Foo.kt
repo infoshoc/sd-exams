@@ -1,0 +1,1 @@
+class Foo: PieceB(listOf(RookII(), ManhattanDistance(3)))
