@@ -1,0 +1,1 @@
+interface StringFunction: Function<String>

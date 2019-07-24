@@ -1,0 +1,1 @@
+data class Item (public val cost: Double)
