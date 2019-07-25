@@ -12,11 +12,9 @@ interface RandomGenerator<T> {
     }
 
     fun <S> flatMap(f: (T) -> RandomGenerator<S>): RandomGenerator<S> {
-        val rgt = this
-
         return object : RandomGenerator<S> {
             override fun get(): S {
-                return f(rgt.get()).get()
+                return f(this@RandomGenerator.get()).get()
             }
         }
     }

@@ -65,9 +65,7 @@ private constructor(
             ComplexOrder(c, this)
 
     fun reverse(): ComplexOrder<T> {
-        val original = this
-
-        return ComplexOrder(Comparator{ o1, o2 -> -original.compare(o1, o2) }, null)
+        return ComplexOrder(Comparator{ o1, o2 -> -this@ComplexOrder.compare(o1, o2) }, null)
     }
 
         companion object {

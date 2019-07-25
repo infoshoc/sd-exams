@@ -1,4 +1,3 @@
-@FunctionalInterface
 interface Signal<T> {
     fun listen(c: (T)->Unit)
 
@@ -9,11 +8,9 @@ interface Signal<T> {
     }
 
     fun <C> flatMap(f: (T) -> Signal<C>): Signal<C> {
-        val o = this
-
         return object : Signal<C> {
             override fun listen(c: (C)->Unit) {
-                o.listen { t ->
+                this@Signal.listen { t ->
                     f(t).listen(c)
                 }
             }

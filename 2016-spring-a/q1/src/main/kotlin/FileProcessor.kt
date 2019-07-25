@@ -33,9 +33,9 @@ open class Writer(outputFile: File) {
 }
 
 fun FileReader.hasNextLine(): Boolean {
-    this.mark(1)
+    mark(1)
     val has = -1 != this.read()
-    this.reset()
+    reset()
 
     return has
 }
@@ -45,5 +45,5 @@ fun FileReader.nextLine(): String {
 }
 
 fun FileWriter.appendLine(s: String)  {
-    this.write(s)
+    write(s)
 }
